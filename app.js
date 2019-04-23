@@ -22,8 +22,8 @@ app.set('db','mongodb://admin:ornitorrinco@tiendamusica-shard-00-00-en3ox.mongod
 
 
 //Rutas/controladores por lógica
-require("./routes/rOfertas.js")(app,swig);
-require("./routes/rUsuarios.js")(app,swig);
+require("./routes/rOfertas.js")(app,swig, mongo);
+require("./routes/rUsuarios.js")(app,swig, mongo);
 
 
 // lanzar el servidor
