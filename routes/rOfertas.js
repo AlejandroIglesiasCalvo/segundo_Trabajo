@@ -10,4 +10,11 @@ module.exports = function(app, swig) {
             +" precio: "+req.body.precio);
     });
 
-};
+
+    app.get("/tienda", function(req, res) {
+    var respuesta = swig.renderFile('views/tienda.html', {
+        vendedor : 'Tienda',
+        ofertas : ofertas
+    });
+
+}
