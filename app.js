@@ -1,5 +1,13 @@
+//Modulos
 var express = require('express');
 var app = express();
+
+var swig = require('swig');
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.static('public'));
 
 // Variables
 app.set('port', 8081);
@@ -9,8 +17,8 @@ app.set('port', 8081);
 
 
 //Rutas/controladores por lógica
-require("./routes/rusuarios.js")(app);
-require("./routes/rcanciones.js")(app);
+require("./routes/rOfertas.js")(app,swig);
+require("./routes/rUsuarios.js")(app,swig);
 
 
 // lanzar el servidor
